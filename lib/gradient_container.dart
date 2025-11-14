@@ -1,4 +1,4 @@
-import 'package:first_app/text_style.dart';
+import 'package:first_app/dice_roller.dart';
 import 'package:flutter/material.dart';
 
 const startAlignment = Alignment.topLeft;
@@ -7,6 +7,7 @@ const endAlignment = Alignment.bottomRight;
 class GradientContainer extends StatelessWidget {
   const GradientContainer(this.colors, {super.key});
   final List<Color> colors;
+
 
   @override
   Widget build(context) {
@@ -18,7 +19,10 @@ class GradientContainer extends StatelessWidget {
           end: endAlignment,
         ),
       ),
-      child: const Center(child: StyledText('Hello world!')),
+      child: Center(
+        // colum will overide center up to down, it will still respect it left to right
+        child: DiceRoller()
+      ),
     );
   }
 }
